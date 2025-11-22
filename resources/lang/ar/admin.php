@@ -143,6 +143,23 @@ return [
     'admin' => 'مدير',
     'staff' => 'موظف',
     'customer_role' => 'عميل',
+    'phone' => 'الهاتف',
+    'joined' => 'تاريخ التسجيل',
+    'password_confirmation' => 'تأكيد كلمة المرور',
+    'leave_blank_to_keep_current' => 'اتركه فارغاً للاحتفاظ بكلمة المرور الحالية',
+
+    // Customers
+    'customers' => 'العملاء',
+    'customer_details' => 'تفاصيل العميل',
+    'edit_customer' => 'تعديل العميل',
+    'customer_not_found' => 'العميل غير موجود',
+    'cannot_delete_customer_with_orders' => 'لا يمكن حذف عميل لديه طلبات',
+    'order_history' => 'سجل الطلبات',
+    'no_orders_found' => 'لا توجد طلبات',
+    'orders_count' => 'عدد الطلبات',
+    'date' => 'التاريخ',
+    'back_to_list' => 'العودة للقائمة',
+    'currency' => 'ريال',
 
     // Settings
     'setting' => 'الإعداد',

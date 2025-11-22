@@ -143,6 +143,23 @@ return [
     'admin' => 'Admin',
     'staff' => 'Staff',
     'customer_role' => 'Customer',
+    'phone' => 'Phone',
+    'joined' => 'Joined',
+    'password_confirmation' => 'Password Confirmation',
+    'leave_blank_to_keep_current' => 'Leave blank to keep current password',
+
+    // Customers
+    'customers' => 'Customers',
+    'customer_details' => 'Customer Details',
+    'edit_customer' => 'Edit Customer',
+    'customer_not_found' => 'Customer not found',
+    'cannot_delete_customer_with_orders' => 'Cannot delete customer with existing orders',
+    'order_history' => 'Order History',
+    'no_orders_found' => 'No orders found',
+    'orders_count' => 'Orders Count',
+    'date' => 'Date',
+    'back_to_list' => 'Back to List',
+    'currency' => 'SAR',
 
     // Settings
     'setting' => 'Setting',

@@ -11,11 +11,14 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the users.
+     * Display a listing of the users (admin panel users only).
      */
     public function index()
     {
-        $users = User::with('roles')
+        $users = User::whereHas('roles', function ($query) {
+                $query->whereIn('name', ['admin', 'staff']);
+            })
+            ->with('roles')
             ->orderBy('created_at', 'desc')
             ->paginate(15);
 
