@@ -14,20 +14,20 @@
             <!-- Hero Content -->
             <div class="animate-slide-in-left">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Welcome to {{ config('app.name') }}
+                    {{ __('storefront.welcome_to_store', ['store' => config('app.name')]) }}
                 </h1>
                 <p class="text-xl mb-8 text-blue-100">
-                    Discover amazing products at unbeatable prices. Shop now and enjoy fast, free shipping on orders over $100.
+                    {{ __('storefront.hero_subtitle') }}
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <x-storefront.button href="{{ route('products.index') }}" size="lg">
                         <svg class="w-5 h-5 ltr:mr-2 rtl:ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>
-                        Shop Now
+                        {{ __('storefront.shop_now') }}
                     </x-storefront.button>
                     <x-storefront.button href="#categories" variant="outline" size="lg" class="!text-white !border-white hover:!bg-white/10">
-                        Browse Categories
+                        {{ __('storefront.browse_categories') }}
                     </x-storefront.button>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg mb-2">Quality Guarantee</h3>
-                    <p class="text-gray-600 text-sm">All products are verified for quality and authenticity</p>
+                    <h3 class="font-bold text-lg mb-2">{{ __('storefront.quality_guarantee') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('storefront.quality_guarantee_desc') }}</p>
                 </div>
             </div>
 
@@ -80,8 +80,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg mb-2">Fast Delivery</h3>
-                    <p class="text-gray-600 text-sm">Get your orders delivered quickly and safely</p>
+                    <h3 class="font-bold text-lg mb-2">{{ __('storefront.fast_delivery') }}</h3>
+                    <p class="text-gray-600 text-sm">{{ __('storefront.fast_delivery_desc') }}</p>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                 </div>
                 <div>
                     <h3 class="font-bold text-lg mb-2">{{ __('storefront.secure_payment') }}</h3>
-                    <p class="text-gray-600 text-sm">Your payment information is always secure</p>
+                    <p class="text-gray-600 text-sm">{{ __('storefront.secure_payment_desc') }}</p>
                 </div>
             </div>
         </div>
@@ -110,10 +110,10 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                     {{ __('storefront.featured_products') }}
                 </h2>
-                <p class="text-gray-600">Discover our handpicked selection of premium products</p>
+                <p class="text-gray-600">{{ __('storefront.featured_products_subtitle') }}</p>
             </div>
             <x-storefront.button href="{{ route('products.index') }}" variant="outline">
-                View All
+                {{ __('storefront.view_all') }}
                 <svg class="w-5 h-5 ltr:ml-2 rtl:mr-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -134,7 +134,7 @@
                 <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
                 </svg>
-                <p class="text-gray-500">No featured products available</p>
+                <p class="text-gray-500">{{ __('storefront.no_featured_products') }}</p>
             </div>
         @endif
     </div>
@@ -146,10 +146,10 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                Shop by Category
+                {{ __('storefront.shop_by_category') }}
             </h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
-                Browse through our wide range of categories to find exactly what you need
+                {{ __('storefront.shop_by_category_subtitle') }}
             </p>
         </div>
 
@@ -192,7 +192,7 @@
                                     {{ $category->products_count }} {{ __('storefront.products') }}
                                 </span>
                                 <span class="text-blue-600 font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                    Explore
+                                    {{ __('storefront.explore') }}
                                     <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
@@ -207,7 +207,7 @@
                 <svg class="w-24 h-24 mx-auto text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
                 </svg>
-                <p class="text-gray-500">No categories available</p>
+                <p class="text-gray-500">{{ __('storefront.no_categories_available') }}</p>
             </div>
         @endif
     </div>
@@ -217,10 +217,10 @@
 <section class="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
     <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-5xl font-bold mb-6">
-            Ready to Start Shopping?
+            {{ __('storefront.ready_to_start_shopping') }}
         </h2>
         <p class="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
-            Join thousands of satisfied customers and discover amazing products today
+            {{ __('storefront.cta_subtitle') }}
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
             @guest
@@ -229,7 +229,7 @@
                 </x-storefront.button>
             @endguest
             <x-storefront.button href="{{ route('products.index') }}" variant="outline" size="lg" class="!text-white !border-white hover:!bg-white/10">
-                Shop Now
+                {{ __('storefront.shop_now') }}
             </x-storefront.button>
         </div>
     </div>

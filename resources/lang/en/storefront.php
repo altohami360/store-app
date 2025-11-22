@@ -167,4 +167,38 @@ return [
     'confirm_account_deletion' => 'Are you sure you want to delete your account?',
     'confirm_deletion_message' => 'Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.',
     'cancel' => 'Cancel',
+
+    // Home Page
+    'welcome_to_store' => 'Welcome to :store',
+    'hero_subtitle' => 'Discover amazing products at unbeatable prices. Shop now and enjoy fast, free shipping on orders over $100.',
+    'shop_now' => 'Shop Now',
+    'browse_categories' => 'Browse Categories',
+    'quality_guarantee' => 'Quality Guarantee',
+    'quality_guarantee_desc' => 'All products are verified for quality and authenticity',
+    'fast_delivery' => 'Fast Delivery',
+    'fast_delivery_desc' => 'Get your orders delivered quickly and safely',
+    'secure_payment' => 'Secure Payment',
+    'secure_payment_desc' => 'Your payment information is always protected',
+    '24_7_support' => '24/7 Support',
+    '24_7_support_desc' => 'Our customer service team is always here to help',
+    'featured_products_subtitle' => 'Discover our handpicked selection of premium products',
+    'view_all' => 'View All',
+    'no_featured_products' => 'No featured products available',
+    'shop_by_category' => 'Shop by Category',
+    'shop_by_category_subtitle' => 'Browse through our wide range of categories to find exactly what you need',
+    'no_categories_available' => 'No categories available',
+    'ready_to_start_shopping' => 'Ready to Start Shopping?',
+    'cta_subtitle' => 'Join thousands of satisfied customers and discover amazing products today',
+    'start_shopping' => 'Start Shopping',
+
+    // Cart Messages
+    'start_adding_products' => 'Start adding products to your cart!',
+
+    // Contact
+    'support_email' => 'support@example.com',
+
+    // General Actions
+    'explore' => 'Explore',
+    'visit_store' => 'Visit Store',
+    'currency' => '$',
 ];

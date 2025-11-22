@@ -23,6 +23,7 @@ class Order extends Model
         'shipping_city',
         'shipping_state',
         'shipping_zip',
+        'shipping_postal_code',
         'shipping_country',
         'payment_method',
         'payment_status',
@@ -44,6 +45,11 @@ class Order extends Model
     }
 
     public function items(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class);
     }

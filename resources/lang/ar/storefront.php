@@ -167,4 +167,38 @@ return [
     'confirm_account_deletion' => 'هل أنت متأكد أنك تريد حذف حسابك؟',
     'confirm_deletion_message' => 'بمجرد حذف حسابك، سيتم حذف جميع موارده وبياناته نهائياً. يرجى إدخال كلمة المرور الخاصة بك لتأكيد أنك ترغب في حذف حسابك نهائياً.',
     'cancel' => 'إلغاء',
+
+    // Home Page
+    'welcome_to_store' => 'مرحباً بك في :store',
+    'hero_subtitle' => 'اكتشف منتجات مذهلة بأسعار لا تقبل المنافسة. تسوق الآن واستمتع بشحن مجاني وسريع للطلبات فوق $100.',
+    'shop_now' => 'تسوق الآن',
+    'browse_categories' => 'تصفح الفئات',
+    'quality_guarantee' => 'ضمان الجودة',
+    'quality_guarantee_desc' => 'جميع المنتجات معتمدة من حيث الجودة والأصالة',
+    'fast_delivery' => 'توصيل سريع',
+    'fast_delivery_desc' => 'احصل على طلباتك بسرعة وأمان',
+    'secure_payment' => 'دفع آمن',
+    'secure_payment_desc' => 'معلومات الدفع الخاصة بك محمية دائماً',
+    '24_7_support' => 'دعم 24/7',
+    '24_7_support_desc' => 'فريق خدمة العملاء لدينا متواجد دائماً لمساعدتك',
+    'featured_products_subtitle' => 'اكتشف مجموعتنا المختارة بعناية من المنتجات المميزة',
+    'view_all' => 'عرض الكل',
+    'no_featured_products' => 'لا توجد منتجات مميزة متاحة',
+    'shop_by_category' => 'تسوق حسب الفئة',
+    'shop_by_category_subtitle' => 'تصفح مجموعتنا الواسعة من الفئات للعثور على ما تحتاجه بالضبط',
+    'no_categories_available' => 'لا توجد فئات متاحة',
+    'ready_to_start_shopping' => 'هل أنت مستعد لبدء التسوق؟',
+    'cta_subtitle' => 'انضم إلى الآلاف من العملاء الراضين واكتشف منتجات مذهلة اليوم',
+    'start_shopping' => 'ابدأ التسوق',
+
+    // Cart Messages
+    'start_adding_products' => 'ابدأ بإضافة المنتجات إلى سلتك!',
+
+    // Contact
+    'support_email' => 'support@example.com',
+
+    // General Actions
+    'explore' => 'استكشف',
+    'visit_store' => 'زيارة المتجر',
+    'currency' => 'ريال',
 ];
