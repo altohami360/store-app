@@ -87,7 +87,7 @@ class OrderService
     {
         $validStatuses = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
 
-        if (!in_array($status, $validStatuses)) {
+        if (! in_array($status, $validStatuses)) {
             throw new \Exception('Invalid order status');
         }
 

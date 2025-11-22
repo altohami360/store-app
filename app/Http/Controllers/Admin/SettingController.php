@@ -81,7 +81,7 @@ class SettingController extends Controller
     public function update(Request $request, Setting $setting)
     {
         $validated = $request->validate([
-            'key' => 'required|string|max:255|unique:settings,key,' . $setting->id,
+            'key' => 'required|string|max:255|unique:settings,key,'.$setting->id,
             'value' => 'required',
             'type' => 'required|in:string,integer,boolean,json',
             'group' => 'nullable|string|max:255',

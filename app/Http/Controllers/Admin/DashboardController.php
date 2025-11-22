@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -19,7 +18,7 @@ class DashboardController extends Controller
             'total_orders' => Order::count(),
             'total_revenue' => Order::whereIn('status', ['delivered', 'shipped', 'processing'])->sum('total_amount'),
             'total_products' => Product::count(),
-            'total_users' => User::whereHas('roles', function($query) {
+            'total_users' => User::whereHas('roles', function ($query) {
                 $query->where('name', 'customer');
             })->count(),
         ];

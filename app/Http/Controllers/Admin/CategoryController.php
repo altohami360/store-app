@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -58,7 +57,7 @@ class CategoryController extends Controller
         }
 
         // Prepare translatable fields
-        $category = new Category();
+        $category = new Category;
         $category->name = [
             'en' => $validated['name']['en'],
             'ar' => $validated['name']['ar'],
@@ -99,7 +98,7 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name.en' => 'required|string|max:255',
             'name.ar' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id,
+            'slug' => 'required|string|max:255|unique:categories,slug,'.$category->id,
             'description.en' => 'nullable|string',
             'description.ar' => 'nullable|string',
             'parent_id' => 'nullable|exists:categories,id',

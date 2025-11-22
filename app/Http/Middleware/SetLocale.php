@@ -23,7 +23,7 @@ class SetLocale
             app()->setLocale($locale);
 
             // If locale is from cookie but not in session, set it in session
-            if (!session()->has('locale') && $request->cookie('locale')) {
+            if (! session()->has('locale') && $request->cookie('locale')) {
                 session(['locale' => $locale]);
             }
         }

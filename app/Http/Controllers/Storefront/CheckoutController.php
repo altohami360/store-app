@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class CheckoutController extends Controller
 {
     protected CartService $cartService;
+
     protected OrderService $orderService;
 
     public function __construct(CartService $cartService, OrderService $orderService)

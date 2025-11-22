@@ -15,12 +15,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!auth()->check()) {
+        if (! auth()->check()) {
             return redirect()->route('admin.login');
         }
 
         // Check if user has admin or staff role
-        if (!auth()->user()->hasAnyRole(['admin', 'staff', 'super_admin'])) {
+        if (! auth()->user()->hasAnyRole(['admin', 'staff', 'super_admin'])) {
             abort(403, 'Unauthorized access to admin panel');
         }
 

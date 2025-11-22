@@ -89,7 +89,7 @@ class UserController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
             'phone' => 'nullable|string|max:255',
             'password' => 'nullable|string|min:8|confirmed',
             'roles' => 'nullable|array',
@@ -100,7 +100,7 @@ class UserController extends Controller
         $user->email = $validated['email'];
         $user->phone = $validated['phone'] ?? null;
 
-        if (isset($validated['password']) && !empty($validated['password'])) {
+        if (isset($validated['password']) && ! empty($validated['password'])) {
             $user->password = Hash::make($validated['password']);
         }
 

@@ -105,7 +105,7 @@ class CartService
 
     public function mergeGuestCart(string $guestSessionId): void
     {
-        if (!Auth::check()) {
+        if (! Auth::check()) {
             return;
         }
 

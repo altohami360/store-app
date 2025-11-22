@@ -18,11 +18,11 @@ class Setting extends Model
     {
         $setting = static::where('key', $key)->first();
 
-        if (!$setting) {
+        if (! $setting) {
             return $default;
         }
 
-        return match($setting->type) {
+        return match ($setting->type) {
             'boolean' => (bool) $setting->value,
             'json' => json_decode($setting->value, true),
             default => $setting->value,
@@ -32,7 +32,7 @@ class Setting extends Model
     // Helper method to set a setting value
     public static function set(string $key, $value, string $type = 'string', string $group = 'general'): void
     {
-        $settingValue = match($type) {
+        $settingValue = match ($type) {
             'boolean' => (int) $value,
             'json' => json_encode($value),
             default => $value,

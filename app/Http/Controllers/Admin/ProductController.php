@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -62,7 +61,7 @@ class ProductController extends Controller
         }
 
         // Prepare translatable fields
-        $product = new Product();
+        $product = new Product;
         $product->name = [
             'en' => $validated['name']['en'],
             'ar' => $validated['name']['ar'],
@@ -106,14 +105,14 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name.en' => 'required|string|max:255',
             'name.ar' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:products,slug,' . $product->id,
+            'slug' => 'required|string|max:255|unique:products,slug,'.$product->id,
             'description.en' => 'nullable|string',
             'description.ar' => 'nullable|string',
             'category_id' => 'required|exists:categories,id',
             'price' => 'required|numeric|min:0',
             'compare_at_price' => 'nullable|numeric|min:0',
             'cost' => 'nullable|numeric|min:0',
-            'sku' => 'nullable|string|max:255|unique:products,sku,' . $product->id,
+            'sku' => 'nullable|string|max:255|unique:products,sku,'.$product->id,
             'barcode' => 'nullable|string|max:255',
             'quantity' => 'required|integer|min:0',
             'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
