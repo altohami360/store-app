@@ -44,6 +44,9 @@
                     <li>
                         <a href="#" class="hover:text-white transition-colors">{{ __('storefront.contact_us') }}</a>
                     </li>
+                    <li>
+                        <a href="{{ route('faqs.index') }}" class="hover:text-white transition-colors">{{ __('storefront.faq') }}</a>
+                    </li>
                 </ul>
             </div>
 
@@ -52,19 +55,16 @@
                 <h3 class="text-white text-lg font-bold mb-4">{{ __('storefront.customer_service') }}</h3>
                 <ul class="space-y-2 text-sm">
                     <li>
-                        <a href="#" class="hover:text-white transition-colors">{{ __('storefront.shipping_info') }}</a>
+                        <a href="{{ route('page.show', 'shipping-information') }}" class="hover:text-white transition-colors">{{ __('storefront.shipping_info') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition-colors">{{ __('storefront.returns') }}</a>
+                        <a href="{{ route('page.show', 'returns-exchanges') }}" class="hover:text-white transition-colors">{{ __('storefront.returns') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition-colors">{{ __('storefront.faq') }}</a>
+                        <a href="{{ route('page.show', 'privacy-policy') }}" class="hover:text-white transition-colors">{{ __('storefront.privacy_policy') }}</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition-colors">{{ __('storefront.privacy_policy') }}</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:text-white transition-colors">{{ __('storefront.terms_conditions') }}</a>
+                        <a href="{{ route('page.show', 'terms-conditions') }}" class="hover:text-white transition-colors">{{ __('storefront.terms_conditions') }}</a>
                     </li>
                 </ul>
             </div>

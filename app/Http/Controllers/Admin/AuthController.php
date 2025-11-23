@@ -14,7 +14,7 @@ class AuthController extends Controller
      */
     public function showLoginForm()
     {
-        if (Auth::check() && Auth::user()->hasAnyRole(['admin', 'staff', 'super_admin'])) {
+        if (Auth::check() && Auth::user()->is_admin) {
             return redirect()->route('admin.dashboard');
         }
 
@@ -34,14 +34,14 @@ class AuthController extends Controller
         $remember = $request->boolean('remember');
 
         if (Auth::attempt($credentials, $remember)) {
-            // Check if user has admin or staff role
-            if (Auth::user()->hasAnyRole(['admin', 'staff', 'super_admin'])) {
+            // Check if user is admin
+            if (Auth::user()->is_admin) {
                 $request->session()->regenerate();
 
                 return redirect()->intended(route('admin.dashboard'));
             }
 
-            // User doesn't have required role
+            // User is not admin
             Auth::logout();
 
             throw ValidationException::withMessages([

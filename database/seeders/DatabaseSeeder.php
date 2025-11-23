@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'phone' => '123456789',
             'password' => bcrypt('password'),
+            'is_admin' => true,
         ]);
         $admin->assignRole('admin');
 
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'staff@example.com',
             'phone' => '123456781',
             'password' => bcrypt('password'),
+            'is_admin' => true,
         ]);
         $staff->assignRole('staff');
 
@@ -44,6 +46,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'customer@example.com',
             'phone' => '123456782',
             'password' => bcrypt('password'),
+            'is_admin' => false,
         ]);
         $customer->assignRole('customer');
 
@@ -212,6 +215,12 @@ class DatabaseSeeder extends Seeder
             'is_active' => true,
             'is_featured' => false,
         ]);
+
+        // Seed FAQs
+        $this->call(FaqSeeder::class);
+
+        // Seed Pages
+        $this->call(PageSeeder::class);
 
         $this->command->info('Database seeded successfully!');
         $this->command->info('Admin credentials: admin@example.com / password');

@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
@@ -36,6 +38,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('customers', CustomerController::class)->except(['create', 'store']);
 
         Route::resource('settings', SettingController::class);
+
+        Route::resource('faqs', FaqController::class);
+
+        Route::resource('pages', PageController::class);
 
         Route::get('/locale/{locale}', [AuthController::class, 'switchLocale'])->name('locale.switch');
 

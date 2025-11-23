@@ -19,8 +19,8 @@ class AdminMiddleware
             return redirect()->route('admin.login');
         }
 
-        // Check if user has admin or staff role
-        if (! auth()->user()->hasAnyRole(['admin', 'staff', 'super_admin'])) {
+        // Check if user is admin
+        if (! auth()->user()->is_admin) {
             abort(403, 'Unauthorized access to admin panel');
         }
 

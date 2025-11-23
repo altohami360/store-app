@@ -13,8 +13,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = User::role('customer')
-            ->with('roles')
+        $customers = User::where('is_admin', false)
             ->withCount('orders')
             ->orderBy('created_at', 'desc')
             ->paginate(15);
@@ -28,12 +27,12 @@ class CustomerController extends Controller
     public function show(User $customer)
     {
         // Ensure the user is a customer
-        if (!$customer->hasRole('customer')) {
+        if ($customer->is_admin) {
             return redirect()->route('admin.customers.index')
                 ->with('error', __('admin.customer_not_found'));
         }
 
-        $customer->load('roles', 'orders');
+        $customer->load('orders');
 
         return view('admin.customers.show', compact('customer'));
     }
@@ -44,7 +43,7 @@ class CustomerController extends Controller
     public function edit(User $customer)
     {
         // Ensure the user is a customer
-        if (!$customer->hasRole('customer')) {
+        if ($customer->is_admin) {
             return redirect()->route('admin.customers.index')
                 ->with('error', __('admin.customer_not_found'));
         }
@@ -58,7 +57,7 @@ class CustomerController extends Controller
     public function update(Request $request, User $customer)
     {
         // Ensure the user is a customer
-        if (!$customer->hasRole('customer')) {
+        if ($customer->is_admin) {
             return redirect()->route('admin.customers.index')
                 ->with('error', __('admin.customer_not_found'));
         }
@@ -84,7 +83,7 @@ class CustomerController extends Controller
     public function destroy(User $customer)
     {
         // Ensure the user is a customer
-        if (!$customer->hasRole('customer')) {
+        if ($customer->is_admin) {
             return redirect()->route('admin.customers.index')
                 ->with('error', __('admin.customer_not_found'));
         }

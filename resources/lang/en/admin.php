@@ -173,6 +173,37 @@ return [
     'store_settings' => 'Store Settings',
     'email_settings' => 'Email Settings',
 
+    // FAQs
+    'faqs' => 'FAQs',
+    'faq' => 'FAQ',
+    'create_faq' => 'Create FAQ',
+    'edit_faq' => 'Edit FAQ',
+    'faq_information' => 'FAQ Information',
+    'question' => 'Question',
+    'question_en' => 'Question (English)',
+    'question_ar' => 'Question (Arabic)',
+    'answer' => 'Answer',
+    'answer_en' => 'Answer (English)',
+    'answer_ar' => 'Answer (Arabic)',
+    'order' => 'Order',
+    'lower_number_appears_first' => 'Lower numbers appear first',
+
+    // Pages
+    'pages' => 'Pages',
+    'page' => 'Page',
+    'create_page' => 'Create Page',
+    'edit_page' => 'Edit Page',
+    'page_information' => 'Page Information',
+    'title' => 'Title',
+    'title_en' => 'Title (English)',
+    'title_ar' => 'Title (Arabic)',
+    'content' => 'Content',
+    'content_en' => 'Content (English)',
+    'content_ar' => 'Content (Arabic)',
+    'meta_description_en' => 'Meta Description (English)',
+    'meta_description_ar' => 'Meta Description (Arabic)',
+    'slug_example' => 'Example: shipping-information',
+
     // Messages
     'created_successfully' => ':resource created successfully',
     'updated_successfully' => ':resource updated successfully',

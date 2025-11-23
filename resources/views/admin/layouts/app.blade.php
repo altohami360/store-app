@@ -11,7 +11,7 @@
     @stack('styles')
 </head>
 <body class="bg-gray-100 font-sans antialiased" x-data="{ sidebarOpen: false }">
-    <div class="min-h-screen flex">
+    <div class="h-screen overflow-hidden flex">
         <!-- Sidebar -->
         <aside class="fixed inset-y-0 {{ app()->getLocale() === 'ar' ? 'right-0 lg:right-auto lg:left-0' : 'left-0' }} z-50 w-64 bg-gradient-to-b from-gray-900 to-gray-800 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 flex flex-col {{ app()->getLocale() === 'ar' ? 'lg:order-first' : '' }}"
                :class="sidebarOpen ? 'translate-x-0' : '{{ app()->getLocale() === 'ar' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0' }}'">
@@ -109,6 +109,26 @@
                         {{ __('admin.users') }}
                     </a>
 
+                    <!-- FAQs -->
+                    <a href="{{ route('admin.faqs.index') }}"
+                       @click="sidebarOpen = false"
+                       class="flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('admin.faqs.*') ? 'bg-amber-500 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">
+                        <svg class="w-5 h-5 {{ app()->getLocale() === 'ar' ? 'ml-3' : 'mr-3' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {{ __('admin.faqs') }}
+                    </a>
+
+                    <!-- Pages -->
+                    <a href="{{ route('admin.pages.index') }}"
+                       @click="sidebarOpen = false"
+                       class="flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors {{ request()->routeIs('admin.pages.*') ? 'bg-amber-500 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">
+                        <svg class="w-5 h-5 {{ app()->getLocale() === 'ar' ? 'ml-3' : 'mr-3' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        {{ __('admin.pages') }}
+                    </a>
+
                     <!-- Settings -->
                     <a href="{{ route('admin.settings.index') }}"
                        @click="sidebarOpen = false"
@@ -136,7 +156,7 @@
              style="display: none;"></div>
 
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col min-w-0 {{ app()->getLocale() === 'ar' ? 'lg:order-last' : '' }}">
+        <div class="flex-1 flex flex-col min-w-0 h-screen {{ app()->getLocale() === 'ar' ? 'lg:order-last' : '' }}">
             <!-- Top Navigation -->
             <header class="bg-white shadow-sm border-b border-gray-200 flex-shrink-0">
                 <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">

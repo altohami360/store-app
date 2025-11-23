@@ -173,6 +173,37 @@ return [
     'store_settings' => 'إعدادات المتجر',
     'email_settings' => 'إعدادات البريد',
 
+    // FAQs
+    'faqs' => 'الأسئلة الشائعة',
+    'faq' => 'سؤال شائع',
+    'create_faq' => 'إنشاء سؤال شائع',
+    'edit_faq' => 'تعديل سؤال شائع',
+    'faq_information' => 'معلومات السؤال الشائع',
+    'question' => 'السؤال',
+    'question_en' => 'السؤال (إنجليزي)',
+    'question_ar' => 'السؤال (عربي)',
+    'answer' => 'الإجابة',
+    'answer_en' => 'الإجابة (إنجليزي)',
+    'answer_ar' => 'الإجابة (عربي)',
+    'order' => 'الترتيب',
+    'lower_number_appears_first' => 'الأرقام الأقل تظهر أولاً',
+
+    // Pages
+    'pages' => 'الصفحات',
+    'page' => 'صفحة',
+    'create_page' => 'إنشاء صفحة',
+    'edit_page' => 'تعديل صفحة',
+    'page_information' => 'معلومات الصفحة',
+    'title' => 'العنوان',
+    'title_en' => 'العنوان (إنجليزي)',
+    'title_ar' => 'العنوان (عربي)',
+    'content' => 'المحتوى',
+    'content_en' => 'المحتوى (إنجليزي)',
+    'content_ar' => 'المحتوى (عربي)',
+    'meta_description_en' => 'الوصف التعريفي (إنجليزي)',
+    'meta_description_ar' => 'الوصف التعريفي (عربي)',
+    'slug_example' => 'مثال: shipping-information',
+
     // Messages
     'created_successfully' => 'تم إنشاء :resource بنجاح',
     'updated_successfully' => 'تم تحديث :resource بنجاح',
