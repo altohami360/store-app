@@ -84,7 +84,7 @@
                                     <p class="text-sm text-gray-500">{{ $order->customer_name }}</p>
                                 </div>
                                 <div class="{{ app()->getLocale() === 'ar' ? 'ml-4 text-left' : 'mr-4 text-right' }}">
-                                    <p class="font-semibold text-gray-900">{{ number_format($order->total_amount, 2) }} {{ __('storefront.currency') }}</p>
+                                    <p class="font-semibold text-gray-900">{{ number_format($order->total, 2) }} {{ __('admin.currency') }}</p>
                                     <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
                                         {{ $order->status === 'pending' ? 'bg-yellow-100 text-yellow-800' : '' }}
                                         {{ $order->status === 'processing' ? 'bg-blue-100 text-blue-800' : '' }}

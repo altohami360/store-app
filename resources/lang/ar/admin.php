@@ -48,6 +48,10 @@ return [
     'update' => 'تحديث',
     'confirm' => 'تأكيد',
     'reset' => 'إعادة تعيين',
+    'from' => 'من',
+    'to' => 'إلى',
+    'all' => 'الكل',
+    'active_filters' => 'الفلاتر النشطة',
 
     // Common Fields
     'name' => 'الاسم',

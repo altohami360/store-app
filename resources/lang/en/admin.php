@@ -48,6 +48,10 @@ return [
     'update' => 'Update',
     'confirm' => 'Confirm',
     'reset' => 'Reset',
+    'from' => 'From',
+    'to' => 'To',
+    'all' => 'All',
+    'active_filters' => 'Active Filters',
 
     // Common Fields
     'name' => 'Name',

@@ -13,9 +13,33 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('user')
-            ->orderBy('created_at', 'desc')
-            ->paginate(15);
+        $query = Order::with('user')->latest();
+
+        // Apply search filter
+        if (request('search')) {
+            $search = request('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('order_number', 'like', "%$search%")
+                    ->orWhere('customer_name', 'like', "%$search%")
+                    ->orWhere('customer_email', 'like', "%$search%")
+                    ->orWhere('customer_phone', 'like', "%$search%");
+            });
+        }
+
+        // Apply status filter
+        if (request('status')) {
+            $query->where('status', request('status'));
+        }
+
+        // Apply date range filter
+        if (request('date_from')) {
+            $query->whereDate('created_at', '>=', request('date_from'));
+        }
+        if (request('date_to')) {
+            $query->whereDate('created_at', '<=', request('date_to'));
+        }
+
+        $orders = $query->paginate(15)->withQueryString();
 
         return view('admin.orders.index', compact('orders'));
     }

@@ -16,7 +16,7 @@ class DashboardController extends Controller
     {
         $stats = [
             'total_orders' => Order::count(),
-            'total_revenue' => Order::whereIn('status', ['delivered', 'shipped', 'processing'])->sum('total_amount'),
+            'total_revenue' => Order::whereIn('status', ['delivered', 'shipped', 'processing'])->sum('total'),
             'total_products' => Product::count(),
             'total_users' => User::where('is_admin', false)->count(),
         ];

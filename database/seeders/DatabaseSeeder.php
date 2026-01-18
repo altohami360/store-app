@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
             'compare_at_price' => 129.99,
             'cost' => 50.00,
             'sku' => 'WH-001',
-            'quantity' => 50,
+            'quantity' => 2,
             'category_id' => $electronics->id,
             'is_active' => true,
             'is_featured' => true,
@@ -169,7 +169,7 @@ class DatabaseSeeder extends Seeder
             'compare_at_price' => 69.99,
             'cost' => 20.00,
             'sku' => 'DJ-001',
-            'quantity' => 75,
+            'quantity' => 6,
             'category_id' => $clothing->id,
             'is_active' => true,
             'is_featured' => true,
@@ -222,8 +222,14 @@ class DatabaseSeeder extends Seeder
         // Seed Pages
         $this->call(PageSeeder::class);
 
+        // Seed Customers (100 customers)
+        $this->call(CustomerSeeder::class);
+
+        // Seed Orders (1000 orders)
+        $this->call(OrderSeeder::class);
+
         $this->command->info('Database seeded successfully!');
-        $this->command->info('Admin credentials: admin@example.com / password');
+        $this->command->info('Admin credentials: admin@admin.com / password');
         $this->command->info('Staff credentials: staff@example.com / password');
         $this->command->info('Customer credentials: customer@example.com / password');
     }

@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'order_number',
         'user_id',
@@ -23,7 +26,6 @@ class Order extends Model
         'shipping_city',
         'shipping_state',
         'shipping_zip',
-        'shipping_postal_code',
         'shipping_country',
         'payment_method',
         'payment_status',
