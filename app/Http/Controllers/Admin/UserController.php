@@ -24,7 +24,7 @@ class UserController extends Controller
 
         return view('admin.users.index', compact('users'));
     }
-
+               // return rseponse()->json($request->user());
     /**
      * Show the form for creating a new user.
      */
